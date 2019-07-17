@@ -3,13 +3,33 @@
     <label :for="name">
       {{ label }}
     </label>
-    <input :type="type" :name="name" :id="name" :placeholder="placeholder"/>
+    <the-mask
+      v-if="masked"
+      :mask="mask"
+      :masked="masked"
+      :type="type"
+      :name="name"
+      :id="name"
+      :placeholder="placeholder"
+      v-model="value"
+    />
+    <input
+      v-else
+      :type="type"
+      :name="name"
+      :id="name"
+      :placeholder="placeholder"
+      v-model="value"
+    />
   </div>
 </template>
 
 <script>
+import { TheMask } from "vue-the-mask";
+
 export default {
   name: "InputField",
+  components: { TheMask },
   props: {
     type: {
       default: "text"
@@ -22,6 +42,19 @@ export default {
     },
     placeholder: {
       default: "Qual seu nome?"
+    }
+  },
+  data() {
+    return {
+      masked: false,
+      mask: "",
+      value: ""
+    };
+  },
+  created() {
+    if (this.type === "phone") {
+      this.masked = true;
+      this.mask = "+## (##) ####-####";
     }
   }
 };
@@ -56,7 +89,8 @@ export default {
     border-bottom: 1px solid $border-input;
     outline: none;
 
-    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
       font-size: 21px;
       color: $input;
     }

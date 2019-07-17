@@ -2,19 +2,22 @@
   <div class="register">
     <InputField label="Nome Completo" />
     <InputField label="Email" placeholder="Digite seu email" />
-    <InputField label="Telefone" placeholder="Qual seu celular?" />
+    <InputField label="Telefone" placeholder="Qual seu celular?" type="phone" />
     <InputField label="Empresa" placeholder="Qual sua empresa?" />
-    <button>CHECK IN</button>
+    <Select />
+    <button>NEXT</button>
   </div>
 </template>
 
 <script>
 import InputField from "@/components/InputField.vue";
+import Select from "@/components/Select.vue";
 
 export default {
   name: "home",
   components: {
-    InputField
+    InputField,
+    Select
   },
   methods: {
     checkIn() {
@@ -34,7 +37,7 @@ export default {
   justify-content: space-around;
   align-items: center;
 
-  padding: 15% 5%;
+  padding: 10% 5%;
   box-sizing: border-box;
 }
 </style>

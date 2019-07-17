@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <img alt="Ambar logo" :src="require('@/assets/images/logo.png')" />
     <div>
       <p>Bem vindo(a) ao nosso</p>
       <p>Customer Center São Carlos!</p>
