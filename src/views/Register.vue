@@ -1,17 +1,21 @@
 <template>
-  <div class="home">
-    <img alt="ambar logo" src="../assets/images/logo.png" />
-    <div>
-      <p>Bem vindo(a) ao nosso</p>
-      <p>Customer Center São Carlos!</p>
-    </div>
+  <div class="register">
+    <InputField label="Nome Completo" />
+    <InputField label="Email" placeholder="Digite seu email" />
+    <InputField label="Telefone" placeholder="Qual seu celular?" />
+    <InputField label="Empresa" placeholder="Qual sua empresa?" />
     <button>CHECK IN</button>
   </div>
 </template>
 
 <script>
+import InputField from "@/components/InputField.vue";
+
 export default {
   name: "home",
+  components: {
+    InputField
+  },
   methods: {
     checkIn() {
       this.$router.push("/register");
@@ -21,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.register {
   width: 100%;
   height: 100%;
 
@@ -30,16 +34,7 @@ export default {
   justify-content: space-around;
   align-items: center;
 
-  img {
-    width: 331.95px;
-    height: 158.5px;
-  }
-
-  div {
-    p {
-      margin: 0;
-      font-weight: bold;
-    }
-  }
+  padding: 15% 5%;
+  box-sizing: border-box;
 }
 </style>

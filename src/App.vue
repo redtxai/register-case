@@ -14,7 +14,7 @@ body {
 }
 
 #app {
-  font-family: "Arial";
+  font-family: "Roboto", sans-serif;
   text-align: center;
   color: $main;
 
