@@ -5,7 +5,7 @@
       <p>Bem vindo(a) ao nosso</p>
       <p>Customer Center São Carlos!</p>
     </div>
-    <button @click="checkIn">CHECK IN</button>
+    <button>CHECK IN</button>
   </div>
 </template>
 
@@ -30,12 +30,9 @@ export default {
   justify-content: space-around;
   align-items: center;
 
-  padding: 15% 20%;
-  box-sizing: border-box;
-
   img {
-    width: 100%;
-    height: auto;
+    width: 331.95px;
+    height: 158.5px;
   }
 
   div {
