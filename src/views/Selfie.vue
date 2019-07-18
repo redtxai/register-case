@@ -65,7 +65,7 @@ export default {
       this.startVideo();
     },
     next() {
-      this.$router.push("/signature");
+      this.$router.push("/reliability");
     },
     stopVideo() {
       if (this.stream) {
@@ -77,7 +77,7 @@ export default {
     startVideo() {
       this.stopVideo();
       navigator.mediaDevices.getUserMedia(this.constraints).then(stream => {
-        this.stream = stream
+        this.stream = stream;
         this.$refs.video.srcObject = stream;
       });
     }

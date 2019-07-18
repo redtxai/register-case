@@ -27,6 +27,12 @@ export default new Router({
       name: "selfie",
       component: () =>
         import(/* webpackChunkName: "selfie" */ "./views/Selfie.vue")
+    },
+    {
+      path: "/reliability",
+      name: "reliability",
+      component: () =>
+        import(/* webpackChunkName: "reliability" */ "./views/Reliability.vue")
     }
   ]
 });
