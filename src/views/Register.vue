@@ -5,7 +5,7 @@
     <InputField label="Telefone" placeholder="Qual seu celular?" type="phone" />
     <InputField label="Empresa" placeholder="Qual sua empresa?" />
     <Select />
-    <button>NEXT</button>
+    <button @click="next">NEXT</button>
   </div>
 </template>
 
@@ -20,8 +20,8 @@ export default {
     Select
   },
   methods: {
-    checkIn() {
-      this.$router.push("/register");
+    next() {
+      this.$router.push("/selfie");
     }
   }
 };
