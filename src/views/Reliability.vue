@@ -18,7 +18,7 @@
 
 <script>
 import pdf from "vue-pdf";
-import VueSignaturePad from 'vue-signature-pad';
+import VueSignaturePad from "vue-signature-pad";
 
 const loadingTask = pdf.createLoadingTask(
   require("@/assets/files/reliability-terms.pdf")
