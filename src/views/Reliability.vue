@@ -4,13 +4,21 @@
     <section class="pdf">
       <pdf v-for="i in numPages" :key="i" :src="src" :page="i"></pdf>
     </section>
-    <section class="signature"></section>
+    <section class="signature">
+      <VueSignaturePad
+        id="signature"
+        width="100%"
+        height="100%"
+        ref="signaturePad"
+      />
+    </section>
     <button @click="next">NEXT</button>
   </article>
 </template>
 
 <script>
 import pdf from "vue-pdf";
+import VueSignaturePad from 'vue-signature-pad';
 
 const loadingTask = pdf.createLoadingTask(
   require("@/assets/files/reliability-terms.pdf")
@@ -19,7 +27,8 @@ const loadingTask = pdf.createLoadingTask(
 export default {
   name: "Reliability",
   components: {
-    pdf
+    pdf,
+    VueSignaturePad
   },
   data() {
     return {
