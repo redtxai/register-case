@@ -33,6 +33,12 @@ export default new Router({
       name: "reliability",
       component: () =>
         import(/* webpackChunkName: "reliability" */ "./views/Reliability.vue")
+    },
+    {
+      path: "/thank-you",
+      name: "thank-you",
+      component: () =>
+        import(/* webpackChunkName: "thank-you" */ "./views/ThankYou.vue")
     }
   ]
 });
