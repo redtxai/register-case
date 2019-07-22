@@ -2,8 +2,8 @@
   <div class="home">
     <img alt="Ambar logo" :src="require('@/assets/images/logo.png')" />
     <div>
-      <p>Muito Obrigado!</p>
-      <p>Aproveite sua visita!</p>
+      <p>Thank you!</p>
+      <p>Enjoy your travel!</p>
     </div>
     <button @click="go">GO!</button>
   </div>

@@ -102,7 +102,7 @@ export default {
     &::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
       font-size: 21px;
-      color: $input;
+      color: $input-placeholder;
     }
   }
 }

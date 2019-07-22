@@ -2,10 +2,10 @@
   <div class="home">
     <img alt="Ambar logo" :src="require('@/assets/images/logo.png')" />
     <div>
-      <p>Lorem ipsum dolor sit amet</p>
-      <p>Consectetur adipiscing elit!</p>
+      <p>Welcome to Lorem Ipsum</p>
+      <p>check in platform!</p>
     </div>
-    <button @click="checkIn">NUNC VEL</button>
+    <button @click="checkIn">CHECK IN</button>
   </div>
 </template>
 
