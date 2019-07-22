@@ -83,9 +83,9 @@ export default {
       });
     },
     next() {
-      this.$store.dispatch("setPhoto", this.photo)
+      this.$store.dispatch("setPhoto", this.photo);
       this.$router.push("/reliability");
-    },
+    }
   }
 };
 </script>
