@@ -19,6 +19,7 @@ export default {
     return {
       showSelfie: false,
       photo: "",
+      photoBase64: "",
       constraints: {
         audio: false,
         video: true
@@ -52,6 +53,7 @@ export default {
 
       this.getCanvasBlob(canvas).then(function(blob) {
         self.photo = URL.createObjectURL(blob);
+        self.photoBase64 = canvas.toDataURL();
         self.showSelfie = true;
         self.stopVideo();
       });
@@ -83,7 +85,7 @@ export default {
       });
     },
     next() {
-      this.$store.dispatch("setPhoto", this.photo);
+      this.$store.dispatch("setPhoto", this.photoBase64);
       this.$router.push("/reliability");
     }
   }

@@ -20,10 +20,10 @@ export default new Vuex.Store({
       state.user = user;
     },
     setPhoto(state, photo) {
-      state.user = photo;
+      state.photo = photo;
     },
     setSignature(state, signature) {
-      state.user = signature;
+      state.signature = signature;
     }
   },
   actions: {
