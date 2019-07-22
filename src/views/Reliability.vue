@@ -1,6 +1,6 @@
 <template>
   <article class="reliability">
-    <h3>Termo de Confiabilidade</h3>
+    <h3>Ullamcorper elit Tincidunt</h3>
     <section class="pdf">
       <pdf v-for="i in numPages" :key="i" :src="src" :page="i"></pdf>
     </section>

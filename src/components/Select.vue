@@ -38,7 +38,7 @@ export default {
       default: "A sua visita é"
     },
     options: {
-      default: () => ["Comercial", "Entrevista", "Evento", "Café"]
+      default: () => []
     }
   },
   data() {

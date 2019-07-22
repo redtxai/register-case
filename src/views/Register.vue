@@ -1,10 +1,10 @@
 <template>
   <div class="register">
-    <InputField label="Nome Completo" />
-    <InputField label="Email" placeholder="Digite seu email" />
-    <InputField label="Telefone" placeholder="Qual seu celular?" type="phone" />
-    <InputField label="Empresa" placeholder="Qual sua empresa?" />
-    <Select />
+    <InputField label="Name" />
+    <InputField label="Email" placeholder="Your email" />
+    <InputField label="Phone" placeholder="Your phone" type="phone" />
+    <InputField label="Neque porro" placeholder="Quisquam est qui" />
+    <Select :options="options" :label="label" :placeholder="placeholder" />
     <button @click="next">NEXT</button>
   </div>
 </template>
@@ -18,6 +18,13 @@ export default {
   components: {
     InputField,
     Select
+  },
+  data() {
+    return {
+      label: "Etiam at gravida",
+      placeholder: "Nunc at sem et...",
+      options: ["Suscipit", "Vestibulum", "Vulputate", "Fringilla"]
+    }
   },
   methods: {
     next() {

@@ -2,10 +2,10 @@
   <div class="home">
     <img alt="Ambar logo" :src="require('@/assets/images/logo.png')" />
     <div>
-      <p>Bem vindo(a) ao nosso</p>
-      <p>Customer Center São Carlos!</p>
+      <p>Lorem ipsum dolor sit amet</p>
+      <p>Consectetur adipiscing elit!</p>
     </div>
-    <button @click="checkIn">CHECK IN</button>
+    <button @click="checkIn">NUNC VEL</button>
   </div>
 </template>
 
