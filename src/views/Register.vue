@@ -24,7 +24,7 @@ export default {
       label: "Etiam at gravida",
       placeholder: "Nunc at sem et",
       options: ["Suscipit", "Vestibulum", "Vulputate", "Fringilla"]
-    }
+    };
   },
   methods: {
     next() {
