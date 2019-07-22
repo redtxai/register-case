@@ -1,5 +1,6 @@
 <template>
   <div class="selfie">
+    <button class="back" @click="back">&lt;</button>
     <div v-if="showSelfie" class="photo">
       <img alt="Selfie" :src="photo" />
       <button class="repeat" @click="repeat">&lt; REPEAT</button>
@@ -142,6 +143,11 @@ export default {
 
       &[class^="next"] {
         left: 75%;
+      }
+
+      &[class^="back"] {
+        left: 25%;
+        top: 7%;
       }
     }
   }
