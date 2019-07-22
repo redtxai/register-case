@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Ambar logo" :src="require('@/assets/images/logo.png')" />
+    <img alt="Ambar logo" :src="logo" />
     <div>
       <p>Thank you!</p>
       <p>Enjoy your travel!</p>
@@ -12,6 +12,18 @@
 <script>
 export default {
   name: "ThankYou",
+  data() {
+    return {
+      logo: ""
+    };
+  },
+  created() {
+    this.logo = this.$store.getters.getLogo;
+    if (!this.logo) {
+      this.logo = require("@/assets/images/logo.png");
+      this.$store.dispatch("setLogo", this.logo);
+    }
+  },
   methods: {
     go() {
       this.$router.push("/");
