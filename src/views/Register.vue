@@ -40,17 +40,15 @@ export default {
         placeholder: "Nunc at sem et",
         options: ["Suscipit", "Vestibulum", "Vulputate", "Fringilla"]
       },
-      user: {
-        name: "",
-        email: "",
-        phone: "",
-        neque: "",
-        selectValue: ""
-      }
+      user: {}
     };
+  },
+  created() {
+    this.user = this.$store.state.user;
   },
   methods: {
     next() {
+      this.$store.dispatch("setUser", this.user);
       this.$router.push("/selfie");
     }
   }

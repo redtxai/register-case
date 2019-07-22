@@ -1,7 +1,7 @@
 <template>
   <div class="selfie">
     <div v-if="showSelfie" class="photo">
-      <img alt="Selfie" :src="image" />
+      <img alt="Selfie" :src="photo" />
       <button class="repeat" @click="repeat">&lt; REPEAT</button>
       <button class="next" @click="next">NEXT</button>
     </div>
@@ -18,13 +18,17 @@ export default {
   data() {
     return {
       showSelfie: false,
-      image: "",
+      photo: "",
       constraints: {
         audio: false,
         video: true
       },
       stream: null
     };
+  },
+  created() {
+    this.photo = this.$store.state.photo;
+    this.showSelfie = this.photo && true;
   },
   mounted() {
     this.startVideo();
@@ -47,7 +51,7 @@ export default {
       const self = this;
 
       this.getCanvasBlob(canvas).then(function(blob) {
-        self.image = URL.createObjectURL(blob);
+        self.photo = URL.createObjectURL(blob);
         self.showSelfie = true;
         self.stopVideo();
       });
@@ -64,9 +68,6 @@ export default {
       this.showSelfie = false;
       this.startVideo();
     },
-    next() {
-      this.$router.push("/reliability");
-    },
     stopVideo() {
       if (this.stream) {
         this.stream.getTracks().forEach(function(track) {
@@ -80,7 +81,11 @@ export default {
         this.stream = stream;
         this.$refs.video.srcObject = stream;
       });
-    }
+    },
+    next() {
+      this.$store.dispatch("setPhoto", this.photo)
+      this.$router.push("/reliability");
+    },
   }
 };
 </script>
