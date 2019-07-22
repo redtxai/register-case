@@ -14,6 +14,9 @@ export default new Vuex.Store({
   actions: {
     setLogo({ commit }, logo) {
       commit("setLogo", logo);
+    },
+    setDefaultState({ commit }) {
+      commit("setDefaultState");
     }
   },
   getters: {

@@ -18,6 +18,7 @@ export default {
     };
   },
   created() {
+    this.$store.dispatch("setDefaultState");
     this.logo = this.$store.getters.getLogo;
     if (!this.logo) {
       this.logo = require("@/assets/images/logo.png");

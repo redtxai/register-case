@@ -4,6 +4,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "App",
+  created() {
+    this.$store.dispatch("setDefaultState");
+  }
+}
+</script>
+
 <style lang="scss">
 body {
   margin: 0;

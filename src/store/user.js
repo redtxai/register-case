@@ -1,16 +1,21 @@
-export default {
-  state: {
-    user: {
-      name: "",
-      email: "",
-      phone: "",
-      neque: "",
-      selectValue: ""
-    },
-    photo: null,
-    signature: null
+const getDefaultState = () => ({
+  user: {
+    name: "",
+    email: "",
+    phone: "",
+    neque: "",
+    selectValue: ""
   },
+  photo: null,
+  signature: null
+});
+
+export default {
+  state: {},
   mutations: {
+    setDefaultState(state) {
+      Object.assign(state, getDefaultState());
+    },
     setUser(state, user) {
       state.user = user;
     },
