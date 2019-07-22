@@ -3,9 +3,9 @@
     <label>
       {{ label }}
     </label>
-    <p>
+    <p @click="showOptions = !showOptions">
       <span>{{ getValue() }}</span>
-      <span @click="showOptions = !showOptions">
+      <span>
         <img alt="Caret" :src="require('@/assets/images/caret.png')" />
       </span>
     </p>

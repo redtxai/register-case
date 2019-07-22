@@ -20,5 +20,9 @@ body {
 
   width: 100%;
   height: 100%;
+  max-width: 500px;
+
+  display: flex;
+  margin: auto;
 }
 </style>

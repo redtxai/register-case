@@ -37,7 +37,7 @@ export default {
   justify-content: space-around;
   align-items: center;
 
-  padding: 10% 5%;
+  padding: 5% 5%;
   box-sizing: border-box;
 }
 </style>
