@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     next() {
-      const { isEmpty, data } = this.$refs.signaturePad.saveSignature();
+      const { data } = this.$refs.signaturePad.saveSignature();
       this.$store.dispatch("setSignature", data);
       this.$router.push("/thank-you");
     }
