@@ -10,14 +10,7 @@
       </span>
     </p>
     <ul v-if="showOptions">
-      <li
-        v-for="(item, index) in options"
-        :key="index"
-        @click="
-          value = item;
-          showOptions = !showOptions;
-        "
-      >
+      <li v-for="(item, index) in options" :key="index" @click="setValue(item)">
         {{ item }}
       </li>
     </ul>
@@ -28,6 +21,9 @@
 export default {
   name: "Select",
   props: {
+    value: {
+      default: ""
+    },
     name: {
       default: "visit"
     },
@@ -43,13 +39,16 @@ export default {
   },
   data() {
     return {
-      value: "",
       showOptions: false
     };
   },
   methods: {
     getValue() {
       return this.value || this.placeholder;
+    },
+    setValue(val) {
+      this.showOptions = !this.showOptions;
+      this.$emit("input", val);
     }
   }
 };

@@ -1,10 +1,24 @@
 <template>
   <div class="register">
-    <InputField label="Name" />
-    <InputField label="Email" placeholder="Your email" />
-    <InputField label="Phone" placeholder="Your phone" type="phone" />
-    <InputField label="Neque porro" placeholder="Quisquam est qui" />
-    <Select :options="options" :label="label" :placeholder="placeholder" />
+    <InputField label="Name" placeholder="Your name" v-model="user.name" />
+    <InputField label="Email" placeholder="Your email" v-model="user.email" />
+    <InputField
+      label="Phone"
+      placeholder="Your phone"
+      type="phone"
+      v-model="user.phone"
+    />
+    <InputField
+      label="Neque porro"
+      placeholder="Quisquam est qui"
+      v-model="user.neque"
+    />
+    <Select
+      :options="selectSetup.options"
+      :label="selectSetup.label"
+      :placeholder="selectSetup.placeholder"
+      v-model="user.selectValue"
+    />
     <button @click="next">NEXT</button>
   </div>
 </template>
@@ -14,16 +28,25 @@ import InputField from "@/components/InputField.vue";
 import Select from "@/components/Select.vue";
 
 export default {
-  name: "home",
+  name: "Register",
   components: {
     InputField,
     Select
   },
   data() {
     return {
-      label: "Etiam at gravida",
-      placeholder: "Nunc at sem et",
-      options: ["Suscipit", "Vestibulum", "Vulputate", "Fringilla"]
+      selectSetup: {
+        label: "Etiam at gravida",
+        placeholder: "Nunc at sem et",
+        options: ["Suscipit", "Vestibulum", "Vulputate", "Fringilla"]
+      },
+      user: {
+        name: "",
+        email: "",
+        phone: "",
+        neque: "",
+        selectValue: ""
+      }
     };
   },
   methods: {

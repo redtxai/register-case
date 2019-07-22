@@ -11,7 +11,8 @@
       :name="name"
       :id="name"
       :placeholder="placeholder"
-      v-model="value"
+      v-model="inputValue"
+      @input="updateValue"
     />
     <input
       v-else
@@ -19,7 +20,8 @@
       :name="name"
       :id="name"
       :placeholder="placeholder"
-      v-model="value"
+      v-model="inputValue"
+      @input="updateValue"
     />
   </div>
 </template>
@@ -31,6 +33,9 @@ export default {
   name: "InputField",
   components: { TheMask },
   props: {
+    value: {
+      default: ""
+    },
     type: {
       default: "text"
     },
@@ -38,23 +43,28 @@ export default {
       default: "name"
     },
     label: {
-      default: "Nome"
+      default: "Name"
     },
     placeholder: {
-      default: "Qual seu nome?"
+      default: ""
     }
   },
   data() {
     return {
       masked: false,
       mask: "",
-      value: ""
+      inputValue: ""
     };
   },
   created() {
     if (this.type === "phone") {
       this.masked = true;
       this.mask = "+## (##) ####-####";
+    }
+  },
+  methods: {
+    updateValue() {
+      this.$emit("input", this.inputValue);
     }
   }
 };
