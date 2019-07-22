@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       label: "Etiam at gravida",
-      placeholder: "Nunc at sem et...",
+      placeholder: "Nunc at sem et",
       options: ["Suscipit", "Vestibulum", "Vulputate", "Fringilla"]
     }
   },
