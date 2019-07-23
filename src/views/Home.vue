@@ -43,18 +43,21 @@ export default {
   justify-content: space-around;
   align-items: center;
 
-  padding: 15% 20%;
+  padding: 40px 80px;
   box-sizing: border-box;
 
   img {
     width: 100%;
     height: auto;
+    max-width: 320px;
+    max-height: 250px;
   }
 
   div {
     p {
       margin: 0;
       font-weight: bold;
+      font-size: 14px;
     }
   }
 }

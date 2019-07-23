@@ -1,12 +1,20 @@
 <template>
   <div id="app">
+    <button class="back" @click="back" v-if="this.$route.meta.showBackButton">
+      &lt;
+    </button>
     <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  methods: {
+    back() {
+      this.$router.back();
+    }
+  }
 };
 </script>
 
@@ -30,5 +38,14 @@ body {
 
   display: flex;
   margin: auto;
+
+  .back {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 10;
+    width: 35px;
+    height: 35px;
+  }
 }
 </style>

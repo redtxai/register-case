@@ -1,6 +1,5 @@
 <template>
   <div class="selfie">
-    <button class="back" @click="back">&lt;</button>
     <div v-if="showSelfie" class="photo">
       <img alt="Selfie" :src="photo" />
       <button class="repeat" @click="repeat">&lt; REPEAT</button>
@@ -36,9 +35,6 @@ export default {
     this.startVideo();
   },
   methods: {
-    back() {
-      this.$router.push("/register");
-    },
     takePhoto() {
       const video = this.$refs.video;
 
@@ -102,16 +98,6 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-
-  .back {
-    position: fixed;
-    transform: translateX(-50%);
-    left: 30px;
-    top: 10px;
-    z-index: 10;
-    width: 35px;
-    height: 35px;
-  }
 
   .video {
     width: 100%;
