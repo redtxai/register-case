@@ -42,7 +42,7 @@ export default {
   justify-content: space-around;
   align-items: center;
 
-  padding: 20px 80px;
+  padding: 40px 80px;
   box-sizing: border-box;
 
   img {
