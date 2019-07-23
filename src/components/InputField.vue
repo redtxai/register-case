@@ -59,8 +59,9 @@ export default {
   created() {
     if (this.type === "phone") {
       this.masked = true;
-      this.mask = "+## (##) ####-####";
+      this.mask = "+## (##) #####-####";
     }
+    this.inputValue = this.value;
   },
   methods: {
     updateValue() {

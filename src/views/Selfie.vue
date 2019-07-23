@@ -36,6 +36,9 @@ export default {
     this.startVideo();
   },
   methods: {
+    back() {
+      this.$router.push("/register");
+    },
     takePhoto() {
       const video = this.$refs.video;
 
@@ -100,6 +103,16 @@ export default {
   height: 100vh;
   overflow: hidden;
 
+  .back {
+    position: fixed;
+    transform: translateX(-50%);
+    left: 30px;
+    top: 10px;
+    z-index: 10;
+    width: 35px;
+    height: 35px;
+  }
+
   .video {
     width: 100%;
     height: 100%;
@@ -143,11 +156,6 @@ export default {
 
       &[class^="next"] {
         left: 75%;
-      }
-
-      &[class^="back"] {
-        left: 25%;
-        top: 7%;
       }
     }
   }
