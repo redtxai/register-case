@@ -1,5 +1,7 @@
 # checkin
 
+https://checkin-lorem-ipsum.herokuapp.com/
+
 ## Project setup
 ```
 yarn install
