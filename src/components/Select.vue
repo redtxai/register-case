@@ -106,6 +106,7 @@ export default {
     top: 60px;
     left: 0;
     z-index: 5;
+    border: 1px solid $border-input;
 
     margin: 0;
     padding: 0;
@@ -126,6 +127,7 @@ export default {
       &:focus,
       &:active {
         background: $list-hover;
+        cursor: pointer;
       }
     }
   }
